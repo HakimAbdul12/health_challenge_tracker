@@ -1,1 +1,71 @@
-<p>add-workout works!</p>
+<div class="container min-h-screen mx-auto px-3">
+  <div class="w-full h-full flex justify-center items-center">
+    <div class="w-full h-full max-w-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class=" w-full h-full">
+        <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">Get started today</h1>
+
+        <p class="mx-auto mt-4 max-w-md text-center text-gray-500">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sunt dolores deleniti
+          inventore quaerat mollitia?
+        </p>
+
+        <form [formGroup]="applyForm!" (submit)="submitForm()"
+          class="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg dark:shadow-2xl dark:border dark:border-gray-800 sm:p-6 lg:p-8">
+          <p class="text-center text-lg font-semibold text-indigo-600">Add a new workout</p>
+
+          <div>
+            <label for="name" class="sr-only">Name</label>
+            <div class="relative">
+              <input id="name" type="text" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                placeholder="Enter your name" required formControlName="name" />
+              <!-- Display error messages for 'name' form control -->
+              <div
+                *ngIf="applyForm.get('name')?.invalid && (applyForm.get('name')?.dirty || applyForm.get('name')?.touched)"
+                class="alert text-red-600 mt-2">
+                <div *ngIf="applyForm.get('name')?.hasError('required')">
+                  Name is required.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label for="type" class="sr-only">Workout type</label>
+            <div class="relative">
+              <select id="type" class="w-full rounded-lg bg-white border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                formControlName="type" required>
+                <option value="" class="opacity-50" disabled selected>Select a workout type</option>
+                <option value="Cycling">Cycling</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Running">Running</option>
+                <option value="Weightlifting">Weightlifting</option>
+                <option value="Swimming">Swimming</option>
+                <option value="Pilates">Pilates</option>
+                <option value="Boxing">Boxing</option>
+                <option value="Dance">Dance</option>
+                <option value="Hiking">Hiking</option>
+                <option value="Meditation">Meditation</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="minutes" class="sr-only">Workout Minutes</label>
+            <div class="relative">
+              <input id="minutes" type="number" min="0"
+                class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Your workout minutes"
+                required formControlName="minutes" />
+            </div>
+          </div>
+
+          <button type="submit"
+            [disabled]="applyForm.invalid"
+            class="transition-all duration-200 block w-full rounded-lg disabled:opacity-50 bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
+            Add
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

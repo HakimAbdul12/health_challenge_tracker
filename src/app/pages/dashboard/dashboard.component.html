@@ -1,1 +1,79 @@
-<p>dashboard works!</p>
+<div class="w-full container mx-auto min-h-screen py-16">
+
+  <div class="border p-2 rounded-xl overflow-hidden">
+    <div class="filter flex justify-between items-center mb-10">
+      <div class="relative">
+        <input type="text" id="Search" placeholder="Search for name ..." (input)="onSearchChange($event)"
+          class="w-full rounded-md border-gray-200 py-4 ps-3 pe-10 shadow-sm sm:text-sm" />
+
+        <span class="absolute inset-y-0 end-0 grid w-10 place-content-center">
+          <button type="button" class="text-gray-600 hover:text-gray-700">
+            <span class="sr-only">Search</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="h-4 w-4">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </button>
+        </span>
+      </div>
+
+      <select (change)="onTypeChange($event)" id="type"
+        class="w-full max-w-sm rounded-lg bg-white border-gray-200 p-4 pe-12 text-sm shadow-sm">
+        <option value="All" class="opacity-50" selected>All</option>
+        <option value="Cycling">Cycling</option>
+        <option value="Yoga">Yoga</option>
+        <option value="Running">Running</option>
+        <option value="Weightlifting">Weightlifting</option>
+        <option value="Swimming">Swimming</option>
+        <option value="Pilates">Pilates</option>
+        <option value="Boxing">Boxing</option>
+        <option value="Dance">Dance</option>
+        <option value="Hiking">Hiking</option>
+        <option value="Meditation">Meditation</option>
+      </select>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm rounded-b-xl">
+        <thead class="ltr:text-left rtl:text-right">
+          <tr>
+            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Name</th>
+            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Workouts</th>
+            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Number of Workouts</th>
+            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Total minutes</th>
+            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-gray-200">
+          @for(item of pagedData; track item.id){
+          <tr>
+            <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{{item.name}}</td>
+            <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+              {{ item.workouts | formatWorkouts }}
+            </td>
+            <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+              {{item.workouts.length}}
+            </td>
+            <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{ getTotalMinutes(item.workouts) }}</td>
+            <td class="whitespace-nowrap px-4 py-2">
+              <a href="#"
+                class="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700">
+                View
+              </a>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <app-paginator
+  [totalRecords]="totalRecords"
+  [itemsPerPage]="itemsPerPage"
+  [currentPage]="currentPage"
+  (pageChange)="onPageChange($event)"
+></app-paginator>
+</div>

@@ -1,10 +1,10 @@
-<div class="py-5 w-full flex justify-center items-center border-b">
+<div class="py-5 w-full flex justify-center items-center border-b sticky top-0 backdrop-blur-3xl dark:border-gray-800">
   <div class="container dark:text-white text-gray-600 flex justify-between items-center">
     <h1 class="text-3xl font-bold clip">Health Challenge Tracker</h1>
     <div class="flex gap-16">
       <ul class="flex gap-5 text-xl font-semibold">
-        <li>New</li>
-        <li>Dashboard</li>
+        <li class="cursor-pointer" routerLink="/">New</li>
+        <li class="cursor-pointer" routerLink="/dashboard">Dashboard</li>
       </ul>
       <div class="flex gap-2">
         <button (click)="darkThemeSelectorService.setDarkTheme()" class="dark:text-white">
