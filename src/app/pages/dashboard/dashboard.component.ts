@@ -4,11 +4,12 @@ import { FormatWorkoutsPipe } from '../../pipes/format-workouts.pipe';
 import { CommonModule } from '@angular/common';
 import { User } from '../../models/user.model';
 import { PaginatorComponent } from '../../components/paginator/paginator.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FormatWorkoutsPipe, PaginatorComponent],
+  imports: [CommonModule, FormatWorkoutsPipe, PaginatorComponent, RouterLink],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   providers: [FormatWorkoutsPipe]

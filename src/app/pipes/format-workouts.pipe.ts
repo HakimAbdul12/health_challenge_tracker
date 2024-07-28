@@ -25,6 +25,6 @@ export class FormatWorkoutsPipe implements PipeTransform {
       .map(([type, count]) => count > 1 ? `${type}(${count})` : type)
       .join(', ');
   }
-
+  
 
 }
