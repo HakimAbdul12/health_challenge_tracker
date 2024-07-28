@@ -4,9 +4,9 @@ export enum AppTheme {
   LIGHT = 'light',
   DARK = 'dark',
 }
-// for SSR and SSG support.
+
 const CLIENT_RENDER = typeof localStorage !== 'undefined';
-// name of variable in localStorage.
+
 const LS_THEME = 'theme';
 
 // previously selected value by user, if available.
@@ -14,7 +14,6 @@ let selectedTheme: AppTheme|undefined = undefined;
 
 // if render happens on client side
 if (CLIENT_RENDER) {
-  // then set value from localStorage or if it not available leave it undefined.
   selectedTheme = localStorage.getItem(LS_THEME) as AppTheme || undefined;
 }
 @Injectable({

@@ -42,6 +42,12 @@ This project is used to track workout progress was generated with [Angular CLI](
   ```bash
   ng test --code-coverage
   ```
+## Code Coverage
+
+The code coverage for this project is available [here](./coverage/index.html).
+
+![Coverage Badge](https://img.shields.io/endpoint?url=https://coverage.example.com/badge)
+
 # Assumptions
 1. Grid Table Workouts Display:
 

@@ -16,6 +16,7 @@ import { MessageService } from 'primeng/api';
 export class AddWorkoutComponent {
 
   applyForm!: FormGroup;
+  submited: boolean = false;
 
   constructor(private workoutService: WorkoutService, private messageService: MessageService) { }
 
@@ -30,13 +31,17 @@ export class AddWorkoutComponent {
     if (this.applyForm?.valid) {
       const { name, type, minutes } = this.applyForm.value;
       this.workoutService.submitWorkout(name, type, minutes);
+      this.applyForm.reset();
+      this.show();
     } else {
       return
     }
   }
 
   show() {
-    console.log('must show')
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
+    this.submited = true;
+    setTimeout(() => {
+      this.submited = false
+    }, 3000)
   }
 }
