@@ -6,7 +6,7 @@ This project includes a service and component to manage and display user workout
 This project is used to track workout progress was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
 
 # Prerequisites
- 1. Node.js: Ensure you have Node.js installed. You can download it from [nodejs.org].
+ 1. Node.js: Ensure you have Node.js installed. You can download it from [nodejs.org](https://nodejs.org).
  2. Angular CLI: This project uses Angular CLI. Install it globally if you haven't already:
   `npm install -g @angular/cli`
 
