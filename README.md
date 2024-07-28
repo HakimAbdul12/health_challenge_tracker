@@ -33,20 +33,17 @@ This project is used to track workout progress was generated with [Angular CLI](
 
   Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-  ## Code Coverage
-
-  ### Running Tests
-
-  To run the tests and generate the code coverage report, use:
-
-  ```bash
-  ng test --code-coverage
-  ```
-## Code Coverage
+# Code Coverage
+  To run tests and generate a code coverage report, use: `ng test --code-coverage`
 
 The code coverage for this project is available [here](./coverage/index.html).
 
 ![Coverage Badge](https://img.shields.io/endpoint?url=https://coverage.example.com/badge)
+
+## Coverage Summary
+
+    1. Component: AddWorkoutComponent
+    2. Service: WorkoutService
 
 # Assumptions
 1. Grid Table Workouts Display:
