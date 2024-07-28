@@ -1,10 +1,10 @@
-<div class="w-full container mx-auto min-h-screen py-16">
+<div class="w-full container mx-auto min-h-screen py-16 px-3 lg:px-10">
 
   <div class="border p-2 rounded-xl overflow-hidden">
-    <div class="filter flex justify-between items-center mb-10">
-      <div class="relative">
+    <div class="filter flex flex-col lg:flex-row justify-between gap-2 items-center mb-10">
+      <div class="relative w-full lg:max-w-[230px]">
         <input type="text" id="Search" placeholder="Search for name ..." (input)="onSearchChange($event)"
-          class="w-full rounded-md border-gray-200 py-4 ps-3 pe-10 shadow-sm sm:text-sm" />
+          class="w-full lg:max-w-[230px] rounded-md border-gray-200 py-4 ps-3 pe-10 shadow-sm sm:text-sm" />
 
         <span class="absolute inset-y-0 end-0 grid w-10 place-content-center">
           <button type="button" class="text-gray-600 hover:text-gray-700">
@@ -20,7 +20,7 @@
       </div>
 
       <select (change)="onTypeChange($event)" id="type"
-        class="w-full max-w-sm rounded-lg bg-white border-gray-200 p-4 pe-12 text-sm shadow-sm">
+        class="w-full lg:max-w-[230px] rounded-lg bg-white border-gray-200 p-4 pe-12 text-sm shadow-sm">
         <option value="All" class="opacity-50" selected>All</option>
         <option value="Cycling">Cycling</option>
         <option value="Yoga">Yoga</option>

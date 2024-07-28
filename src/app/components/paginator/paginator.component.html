@@ -1,4 +1,4 @@
-<div class="flex justify-center mt-4">
+<div class="flex justify-center mt-4"   *ngIf = "totalRecords > 5">
   <button
     class="px-4 py-2 bg-blue-500 text-white rounded"
     [disabled]="currentPage === 1"
@@ -7,7 +7,7 @@
     Previous
   </button>
 
-  <span class="mx-2">Page {{ currentPage }} of {{ totalPages }}</span>
+  <span class="mx-2 dark:text-white">Page {{ currentPage }} of {{ totalPages }}</span>
 
   <button
     class="px-4 py-2 bg-blue-500 text-white rounded"

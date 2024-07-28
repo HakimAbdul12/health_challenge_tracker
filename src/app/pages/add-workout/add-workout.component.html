@@ -1,10 +1,10 @@
-<div class="container min-h-screen mx-auto px-3">
+<div class="container min-h-screen mx-auto px-3 lg:px-10">
   <div class="w-full h-full flex justify-center items-center">
     <div class="w-full h-full max-w-xl px-4 py-16 sm:px-6 lg:px-8">
       <div class=" w-full h-full">
         <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">Get started today</h1>
 
-        <p class="mx-auto mt-4 max-w-md text-center text-gray-500">
+        <p class="mx-auto mt-4 max-w-md text-center text-gray-500 dark:text-white">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sunt dolores deleniti
           inventore quaerat mollitia?
         </p>
@@ -65,7 +65,7 @@
           </button>
         </form>
 
-        <p [ngClass]="{'block': submited === true, 'hidden': submited !== true}" class="text-center text-green-300 font-bold text-xl bg-green-500/50 px-3 py-1 w-fit rounded-2xl float-right mt-5">submitted</p>
+        <p [ngClass]="{'block': submited === true, 'hidden': submited !== true}" class="text-center dark:text-green-300 text-green-800 font-bold text-xl bg-green-500/50 px-3 py-1 w-fit rounded-2xl float-right mt-5">submitted</p>
       </div>
     </div>
   </div>
